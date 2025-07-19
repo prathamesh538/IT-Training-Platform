@@ -2,6 +2,9 @@
 
 A comprehensive web application for IT training institutes, academies, and providers to post and manage webinars, seminars, and courses. Students can browse events and contact providers directly.
 
+##  working link
+https://it-training-platform.netlify.app/
+
 ## 🚀 Features
 
 ### For Training Providers
