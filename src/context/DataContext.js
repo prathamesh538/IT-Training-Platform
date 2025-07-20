@@ -10,7 +10,6 @@ const initialState = {
   isAuthenticated: false,
   userRole: null, // 'admin', 'provider', 'student'
 };
-
 const dataReducer = (state, action) => {
   switch (action.type) {
     case 'SET_EVENTS':
