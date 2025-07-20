@@ -116,6 +116,7 @@ export const DataProvider = ({ children }) => {
         id: 1,
         name: 'Admin User',
         email: 'admin@itplatform.com',
+        password: 'admin123',
         role: 'admin',
         organization: 'IT Training Platform',
       },
@@ -123,6 +124,7 @@ export const DataProvider = ({ children }) => {
         id: 2,
         name: 'TechAcademy Pro',
         email: 'contact@techacademypro.com',
+        password: 'provider123',
         role: 'provider',
         organization: 'TechAcademy Pro',
         phone: '+1-555-0123',
@@ -132,10 +134,19 @@ export const DataProvider = ({ children }) => {
         id: 3,
         name: 'Cloud Masters Institute',
         email: 'info@cloudmasters.com',
+        password: 'provider123',
         role: 'provider',
         organization: 'Cloud Masters Institute',
         phone: '+1-555-0456',
         description: 'Specialized in cloud computing and AWS training programs.',
+      },
+      {
+        id: 4,
+        name: 'Student User',
+        email: 'student@example.com',
+        password: 'student123',
+        role: 'student',
+        organization: 'Student',
       },
     ];
 
@@ -163,8 +174,8 @@ export const DataProvider = ({ children }) => {
   };
 
   const login = (email, password) => {
-    // Simple authentication logic
-    const user = state.users.find(u => u.email === email);
+    // Simple authentication logic with email and password validation
+    const user = state.users.find(u => u.email === email && u.password === password);
     if (user) {
       dispatch({ type: 'SET_CURRENT_USER', payload: user });
       dispatch({ type: 'SET_AUTHENTICATION', payload: true });
