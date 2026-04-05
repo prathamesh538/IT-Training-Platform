@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {
   Container,
   Paper,
@@ -167,8 +167,11 @@ const Login = () => {
                 <Chip label="OR" />
               </Divider>
 
-              <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center' }}>
-                Don't have an account? Contact us to get started as a training provider.
+              <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center', mb: 2 }}>
+                Don't have an account?{' '}
+                <Link to="/register" style={{ color: '#1976d2', textDecoration: 'none', fontWeight: 600 }}>
+                  Register as a student
+                </Link>
               </Typography>
             </Paper>
           </Grid>

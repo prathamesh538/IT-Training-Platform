@@ -184,6 +184,28 @@ export const DataProvider = ({ children }) => {
     return false;
   };
 
+  const register = (userData) => {
+    // Check if email already exists
+    const emailExists = state.users.find(u => u.email === userData.email);
+    if (emailExists) {
+      return false;
+    }
+
+    // Create new user
+    const newUser = {
+      id: state.users.length + 1,
+      name: userData.name,
+      email: userData.email,
+      password: userData.password,
+      phone: userData.phone || '',
+      organization: userData.organization || 'Student',
+      role: userData.role || 'student',
+    };
+
+    dispatch({ type: 'ADD_USER', payload: newUser });
+    return true;
+  };
+
   const logout = () => {
     dispatch({ type: 'LOGOUT' });
   };
@@ -222,6 +244,7 @@ export const DataProvider = ({ children }) => {
     getExpiredEvents,
     getPendingEvents,
     login,
+    register,
     logout,
     addEvent,
     approveEvent,

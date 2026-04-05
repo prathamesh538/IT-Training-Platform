@@ -5,6 +5,7 @@ import { useData } from './context/DataContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import AdminDashboard from './pages/AdminDashboard';
 import ProviderDashboard from './pages/ProviderDashboard';
 import StudentDashboard from './pages/StudentDashboard';
@@ -35,6 +36,7 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/events/:id" element={<EventDetail />} />
         
         {/* Protected Routes */}
